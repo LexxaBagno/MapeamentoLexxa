@@ -44,7 +44,7 @@
 
 <div class="container">
     <h1>Mapeamento de Similares de Cozinha</h1>
-    <div class="subtitle">Banco de dados com correções de imagens para o GitHub Pages</div>
+    <div class="subtitle">Banco de dados configurado para imagens em letras MAIÚSCULAS</div>
     
     <div class="search-box">
         <input type="text" id="busca" placeholder="Busque por Lexxa ou Concorrente (Ex: Harco, Frame, Laris, Level, Spin...)" oninput="buscarSimilar()">
@@ -55,81 +55,81 @@
 </div>
 
 <script>
-// Banco de dados com caminhos mapeados para letras minúsculas (Padrão GitHub)
+// AJUSTADO: Nomes dos arquivos de imagem exatamente em MAIÚSCULO (.jpg) para bater com o seu GitHub
 const baseSimilares = [
     {
         lexxa_nome: "ARTICO",
-        lexxa_img: "artico.jpg",
+        lexxa_img: "ARTICO.jpg",
         concorrentes: [
-            { marca: "DOCOL", codigo: "ORBIT", img: "orbit.jpg" }
+            { marca: "DOCOL", codigo: "ORBIT", img: "ORBIT.jpg" }
         ]
     },
     {
         lexxa_nome: "HARCO",
-        lexxa_img: "harco.jpg", 
+        lexxa_img: "HARCO.jpg", 
         concorrentes: [
-            { marca: "DECA", codigo: "URBAN", img: "urban.jpg" },
-            { marca: "DECA", codigo: "2280C", img: "2280c.jpg" },
-            { marca: "DOCOL", codigo: "DOC", img: "doc.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3362", img: "rb3362.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3396", img: "rb3396.jpg" },
-            { marca: "DOKA", codigo: "AEREA", img: "aerea.jpg" }
+            { marca: "DECA", codigo: "URBAN", img: "URBAN.jpg" },
+            { marca: "DECA", codigo: "2280C", img: "2280C.jpg" },
+            { marca: "DOCOL", codigo: "DOC", img: "DOC.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3362", img: "RB3362.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3396", img: "RB3396.jpg" },
+            { marca: "DOKA", codigo: "AEREA", img: "AEREA.jpg" }
         ]
     },
     {
         lexxa_nome: "BOOL",
-        lexxa_img: "bool.jpg", // Vinculado à foto BOOL.jpg que você enviou
+        lexxa_img: "BOOL.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
-            { marca: "DOCOL", codigo: "MANGIARE", img: "magiare.jpg" },
-            { marca: "DOKA", codigo: "FERME", img: "ferme.jpg" } // Preparado para quando você subir o arquivo ferme.jpg
+            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
+            { marca: "DOCOL", codigo: "MANGIARE", img: "MAGIARE.jpg" },
+            { marca: "DOKA", codigo: "FERME", img: "FERME.jpg" }
         ]
     },
     {
         lexxa_nome: "FRAME",
-        lexxa_img: "frame.jpg", // Preparado para quando você subir o arquivo frame.jpg
+        lexxa_img: "FRAME.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "LEVEL", img: "level.jpg" }, // Preparado para quando você subir o arquivo level.jpg
-            { marca: "DOCOL", codigo: "LIFT", img: "lift.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3401", img: "rb3401.jpg" },
-            { marca: "DOKA", codigo: "NEORA", img: "neora.jpg" } // Corrigido para buscar neora.jpg
+            { marca: "DECA", codigo: "LEVEL", img: "LEVEL.jpg" },
+            { marca: "DOCOL", codigo: "LIFT", img: "LIFT.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3401", img: "RB3401.jpg" },
+            { marca: "DOKA", codigo: "NEORA", img: "NEORA.jpg" }
         ]
     },
     {
         lexxa_nome: "REEL",
-        lexxa_img: "reel.jpg",
+        lexxa_img: "REEL.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
-            { marca: "DOCOL", codigo: "BOLD", img: "bold.jpg" }
+            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
+            { marca: "DOCOL", codigo: "BOLD", img: "BOLD.jpg" }
         ]
     },
     {
         lexxa_nome: "QUARK",
-        lexxa_img: "quark.jpg",
+        lexxa_img: "QUARK.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
-            { marca: "DOCOL", codigo: "CHOICE", img: "choice.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3150", img: "rb3150.jpg" }
+            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
+            { marca: "DOCOL", codigo: "CHOICE", img: "CHOICE.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3150", img: "RB3150.jpg" }
         ]
     },
     {
         lexxa_nome: "CONIQ",
-        lexxa_img: "coniq.jpg",
+        lexxa_img: "CONIQ.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "LEVEL GOURMET", img: "level gourmet.jpg" }, // Preparado para quando subir a foto
-            { marca: "DOCOL", codigo: "DOC", img: "doc.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3396", img: "rb3396.jpg" },
-            { marca: "DOKA", codigo: "AEREA", img: "aerea.jpg" }
+            { marca: "DECA", codigo: "LEVEL GOURMET", img: "LEVEL GOURMET.jpg" },
+            { marca: "DOCOL", codigo: "DOC", img: "DOC.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3396", img: "RB3396.jpg" },
+            { marca: "DOKA", codigo: "AEREA", img: "AEREA.jpg" }
         ]
     },
     {
         lexxa_nome: "LARIS",
-        lexxa_img: "laris.jpg", // Preparado para quando você tiver a foto da Laris
+        lexxa_img: "LARIS.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "DECA YOU", img: "deca you.jpg" },
-            { marca: "DOCOL", codigo: "MIX & MATCH", img: "mix & match.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB33865", img: "rb33865.jpg" },
-            { marca: "DOKA", codigo: "MODU", img: "modu.jpg" } // Corrigido para buscar modu.jpg
+            { marca: "DECA", codigo: "DECA YOU", img: "DECA YOU.jpg" },
+            { marca: "DOCOL", codigo: "MIX & MATCH", img: "MIX & MATCH.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB33865", img: "RB33865.jpg" },
+            { marca: "DOKA", codigo: "MODU", img: "MODU.jpg" }
         ]
     }
 ];
@@ -159,9 +159,9 @@ function buscarSimilar() {
         const cardMestre = document.createElement('div');
         cardMestre.className = 'card-mapeamento';
         
-        const nomeImagemLexxa = item.lexxa_img ? item.lexxa_img.toLowerCase() : '';
+        // Mantém o nome do arquivo exatamente como definido na base (MAIÚSCULO)
         const imgLexxa = item.lexxa_img 
-            ? `<img class="foto-produto" src="${nomeImagemLexxa}" alt="${item.lexxa_nome}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
+            ? `<img class="foto-produto" src="${item.lexxa_img}" alt="${item.lexxa_nome}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
             : '';
         
         let htmlLexxa = `
@@ -178,9 +178,8 @@ function buscarSimilar() {
         let htmlConcorrentes = `<div class="grid-concorrentes">`;
         
         item.concorrentes.forEach(c => {
-            const nomeImagemConcorrente = c.img ? c.img.toLowerCase() : '';
             const imgC = c.img 
-                ? `<img class="foto-produto" src="${nomeImagemConcorrente}" alt="${c.codigo}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
+                ? `<img class="foto-produto" src="${c.img}" alt="${c.codigo}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
                 : '';
                 
             htmlConcorrentes += `
