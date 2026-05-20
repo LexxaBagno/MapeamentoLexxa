@@ -16,7 +16,7 @@
         
         .grid-resultados { display: grid; gap: 25px; }
         
-        /* Cartão mestre por produto Lexxa */
+        /* Layout mestre por produto Lexxa */
         .card-mapeamento { border: 1px solid #e0e0e0; border-radius: 8px; background: #fafafa; display: flex; flex-direction: row; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         
         /* Lado Esquerdo: Produto Principal Lexxa */
@@ -44,10 +44,10 @@
 
 <div class="container">
     <h1>Mapeamento de Similares de Cozinha</h1>
-    <div class="subtitle"></div>
+    <div class="subtitle">Banco de dados com correções de imagens para o GitHub Pages</div>
     
     <div class="search-box">
-        <input type="text" id="busca" placeholder="Busque por Lexxa ou Concorrente (Ex: Harco, Artico, Spin, Deca, Docol...)" oninput="buscarSimilar()">
+        <input type="text" id="busca" placeholder="Busque por Lexxa ou Concorrente (Ex: Harco, Frame, Laris, Level, Spin...)" oninput="buscarSimilar()">
     </div>
 
     <div id="resultados" class="grid-resultados">
@@ -55,81 +55,81 @@
 </div>
 
 <script>
-// Banco de dados corrigido e alinhado exatamente linha por linha com a sua planilha
+// Banco de dados com caminhos mapeados para letras minúsculas (Padrão GitHub)
 const baseSimilares = [
     {
         lexxa_nome: "ARTICO",
-        lexxa_img: "ARTICO.jpg",
+        lexxa_img: "artico.jpg",
         concorrentes: [
-            { marca: "DOCOL", codigo: "ORBIT", img: "ORBIT.jpg" }
+            { marca: "DOCOL", codigo: "ORBIT", img: "orbit.jpg" }
         ]
     },
     {
         lexxa_nome: "HARCO",
-        lexxa_img: "HARCO.jpg", // CORRIGIDO: Agora o sistema busca pela imagem HARCO.jpg
+        lexxa_img: "harco.jpg", 
         concorrentes: [
-            { marca: "DECA", codigo: "URBAN", img: "URBAN.jpg" },
-            { marca: "DECA", codigo: "2280C", img: "2280C.jpg" },
-            { marca: "DOCOL", codigo: "DOC", img: "DOC.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3362", img: "RB3362.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3396", img: "RB3396.jpg" },
-            { marca: "DOKA", codigo: "AEREA", img: "AEREA.jpg" }
+            { marca: "DECA", codigo: "URBAN", img: "urban.jpg" },
+            { marca: "DECA", codigo: "2280C", img: "2280c.jpg" },
+            { marca: "DOCOL", codigo: "DOC", img: "doc.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3362", img: "rb3362.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3396", img: "rb3396.jpg" },
+            { marca: "DOKA", codigo: "AEREA", img: "aerea.jpg" }
         ]
     },
     {
         lexxa_nome: "BOOL",
-        lexxa_img: "BOOL.jpg",
+        lexxa_img: "bool.jpg", // Vinculado à foto BOOL.jpg que você enviou
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
-            { marca: "DOCOL", codigo: "MANGIARE", img: "MAGIARE.jpg" },
-            { marca: "DOKA", codigo: "FERME", img: "" }
+            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
+            { marca: "DOCOL", codigo: "MANGIARE", img: "magiare.jpg" },
+            { marca: "DOKA", codigo: "FERME", img: "ferme.jpg" } // Preparado para quando você subir o arquivo ferme.jpg
         ]
     },
     {
         lexxa_nome: "FRAME",
-        lexxa_img: "",
+        lexxa_img: "frame.jpg", // Preparado para quando você subir o arquivo frame.jpg
         concorrentes: [
-            { marca: "DECA", codigo: "LEVEL", img: "" },
-            { marca: "DOCOL", codigo: "LIFT", img: "LIFT.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3401", img: "RB3401.jpg" },
-            { marca: "DOKA", codigo: "NEORA", img: "NEORA.jpg" }
+            { marca: "DECA", codigo: "LEVEL", img: "level.jpg" }, // Preparado para quando você subir o arquivo level.jpg
+            { marca: "DOCOL", codigo: "LIFT", img: "lift.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3401", img: "rb3401.jpg" },
+            { marca: "DOKA", codigo: "NEORA", img: "neora.jpg" } // Corrigido para buscar neora.jpg
         ]
     },
     {
         lexxa_nome: "REEL",
-        lexxa_img: "REEL.jpg",
+        lexxa_img: "reel.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
-            { marca: "DOCOL", codigo: "BOLD", img: "BOLD.jpg" }
+            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
+            { marca: "DOCOL", codigo: "BOLD", img: "bold.jpg" }
         ]
     },
     {
         lexxa_nome: "QUARK",
-        lexxa_img: "QUARK.jpg",
+        lexxa_img: "quark.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "SPIN", img: "SPIN.jpg" },
-            { marca: "DOCOL", codigo: "CHOICE", img: "CHOICE.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3150", img: "RB3150.jpg" }
+            { marca: "DECA", codigo: "SPIN", img: "spin.jpg" },
+            { marca: "DOCOL", codigo: "CHOICE", img: "choice.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3150", img: "rb3150.jpg" }
         ]
     },
     {
         lexxa_nome: "CONIQ",
-        lexxa_img: "CONIQ.jpg",
+        lexxa_img: "coniq.jpg",
         concorrentes: [
-            { marca: "DECA", codigo: "LEVEL GOURMET", img: "" },
-            { marca: "DOCOL", codigo: "DOC", img: "DOC.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB3396", img: "RB3396.jpg" },
-            { marca: "DOKA", codigo: "AEREA", img: "AEREA.jpg" }
+            { marca: "DECA", codigo: "LEVEL GOURMET", img: "level gourmet.jpg" }, // Preparado para quando subir a foto
+            { marca: "DOCOL", codigo: "DOC", img: "doc.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB3396", img: "rb3396.jpg" },
+            { marca: "DOKA", codigo: "AEREA", img: "aerea.jpg" }
         ]
     },
     {
         lexxa_nome: "LARIS",
-        lexxa_img: "",
+        lexxa_img: "laris.jpg", // Preparado para quando você tiver a foto da Laris
         concorrentes: [
-            { marca: "DECA", codigo: "DECA YOU", img: "DECA YOU.jpg" },
-            { marca: "DOCOL", codigo: "MIX & MATCH", img: "MIX & MATCH.jpg" },
-            { marca: "RUBINETTOS", codigo: "RB33865", img: "RB33865.jpg" },
-            { marca: "DOKA", codigo: "MODU", img: "MODU.jpg" }
+            { marca: "DECA", codigo: "DECA YOU", img: "deca you.jpg" },
+            { marca: "DOCOL", codigo: "MIX & MATCH", img: "mix & match.jpg" },
+            { marca: "RUBINETTOS", codigo: "RB33865", img: "rb33865.jpg" },
+            { marca: "DOKA", codigo: "MODU", img: "modu.jpg" } // Corrigido para buscar modu.jpg
         ]
     }
 ];
@@ -159,14 +159,18 @@ function buscarSimilar() {
         const cardMestre = document.createElement('div');
         cardMestre.className = 'card-mapeamento';
         
+        const nomeImagemLexxa = item.lexxa_img ? item.lexxa_img.toLowerCase() : '';
         const imgLexxa = item.lexxa_img 
-            ? `<img class="foto-produto" src="${item.lexxa_img}" alt="${item.lexxa_nome}">` 
-            : `<div class="sem-foto">Sem Imagem</div>`;
-
+            ? `<img class="foto-produto" src="${nomeImagemLexxa}" alt="${item.lexxa_nome}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
+            : '';
+        
         let htmlLexxa = `
             <div class="bloco-lexxa">
                 <span class="badge lexxa">LEXXA</span>
-                <div class="foto-container">${imgLexxa}</div>
+                <div class="foto-container">
+                    ${imgLexxa}
+                    <div class="sem-foto" style="${item.lexxa_img ? 'display:none;' : ''}">Sem Imagem</div>
+                </div>
                 <h3>${item.lexxa_nome}</h3>
             </div>
         `;
@@ -174,14 +178,18 @@ function buscarSimilar() {
         let htmlConcorrentes = `<div class="grid-concorrentes">`;
         
         item.concorrentes.forEach(c => {
+            const nomeImagemConcorrente = c.img ? c.img.toLowerCase() : '';
             const imgC = c.img 
-                ? `<img class="foto-produto" src="${c.img}" alt="${c.codigo}">` 
-                : `<div class="sem-foto">Imagem não<br>cadastrada</div>`;
+                ? `<img class="foto-produto" src="${nomeImagemConcorrente}" alt="${c.codigo}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` 
+                : '';
                 
             htmlConcorrentes += `
                 <div class="item-produto">
                     <span class="badge">${c.marca}</span>
-                    <div class="foto-container">${imgC}</div>
+                    <div class="foto-container">
+                        ${imgC}
+                        <div class="sem-foto" style="${c.img ? 'display:none;' : ''}">Imagem não<br>cadastrada</div>
+                    </div>
                     <h3>${c.codigo}</h3>
                 </div>
             `;
